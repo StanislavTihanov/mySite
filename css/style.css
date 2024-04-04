@@ -83,7 +83,7 @@ body.lock {
   margin-bottom: 50px;
 }
 .title h1{
-  font-size: clamp(40px, 4.4vw, 64px);
+  font-size: clamp(30px, 4.4vw, 64px);
   line-height: 100%;
   color: var(--color-black);
   font-weight: 600;
@@ -142,17 +142,60 @@ body.lock {
   font-size: 18px;
 }
 .button {
-  background-color: var(--color-red);
-  width: 200px;
-  height: 20px;
+  text-align: center;
+  font-size: clamp(18px, 1.9vw, 28px);
+  margin-bottom: 10px;
 }
-
+.button a {
+  display: block;
+  background-color: var(--color-red);
+  max-width: 450px;
+  color: var(--color-white);
+  padding: 14px;
+  border-radius: 5px;
+}
 /*---------------------------------------header----------------------*/
 
 /*---------------------------------------homepage----------------------*/
 .main-section{
   margin-top: 75px;
+  
+}
+.main-section__body {
+  display: flex;
+  justify-content: space-between;
   background-color: #FFFFFF;
+  box-shadow: -10px 10px 26px 0 rgba(255, 255, 255, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.main-section__info {
+  margin-top: 50px;
+  margin-left: 20px;
+  position: relative;
+}
+.main-section__text {
+  margin-bottom: 20px;
+  font-size: clamp(18px, 1.9vw, 28px);
+}
+.main-section__image {
+  flex-basis: 500px;
+}
+.main-section__image img {
+  width: 100%;
+  border-bottom-right-radius: 10px;
+}
+.main-section__die {
+  background-color: var(--color-pink);
+  width: 100%;
+  font-size: clamp(18px, 1.9vw, 28px);
+  text-align: center;
+  padding: 5px;
+  z-index: 2;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: -30px;
+  position: relative;
+  z-index: 2;
 }
 
 /*---------------------------------------homepage----------------------*/
