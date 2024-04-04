@@ -324,6 +324,7 @@ if (menuLinks.length > 0) {
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   loop: true,
+  spaceBetween: 20,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
