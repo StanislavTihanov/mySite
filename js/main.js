@@ -321,22 +321,20 @@ if (menuLinks.length > 0) {
 
 
 //------------------------------------------------------------------------Слайдер
-//const swiper = new Swiper('.swiper', {
-//  direction: 'horizontal',
-//  loop: true,
-//  pagination: {
-//    el: '.swiper-pagination',
-//    clickable: true,
-//  },
-//  navigation: {
-//    nextEl: '.swiper-button-next',
-//    prevEl: '.swiper-button-prev',
-//  },
-//  autoplay: {
-//    delay: 2000,
-//  },
-//  speed: 2000,
-//});
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  speed: 2000,
+});
 //------------------------------------------------------------------------Слайдер
 
 
