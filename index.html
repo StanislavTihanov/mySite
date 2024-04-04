@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="эталон">
-  <meta name="keywords" content="эталон">
-  <title>Эталон</title>
+  <meta name="description" content="Верстка сайтов по вашим макетам">
+  <meta name="keywords" content="Верстка">
+  <title>Фрилансер Станислав</title>
   <link rel="shortcut icon" href="/images/favicon.icon">
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -24,22 +24,26 @@
           <nav class="menu" id="menu">
             <ul class="menu__list">
               <li class="menu__list-item">
-                <a class="menu__link" data-goto=".reviews" href="#">Главная</a>
+                <a class="menu__link" data-goto=".rates" href="#">Обо мне</a>
               </li>
               <li class="menu__list-item">
-                <a class="menu__link" data-goto=".rates" href="#">О нас</a>
-              </li>
-              <li class="menu__list-item">
-                <a class="menu__link" data-goto=".about" href="#">Каталог</a>
+                <a class="menu__link" data-goto=".about" href="#">Проекты</a>
               </li>
               <li class="menu__list-item">
                 <a class="menu__link" data-goto=".locations" href="#">Контакты</a>
               </li>
             </ul>
           </nav>
-          <div class="header__box">
-            <a href="tel:+777777777776">+7 (777) 777 77-77</a>
-            <a href="mailto:stas89tihanov@gmail.com">stas89tihanov@gmail.com</a>
+          <div class="header__messengers">
+            <a href="#">
+              <img src="images/Telegram.svg" alt="icon telegram">
+            </a>
+            <a href="#">
+              <img src="images/Whatsapp.svg" alt="icon whatsapp">
+            </a>
+            <a href="#">
+              <img src="images/VK.svg" alt="icon vk">
+            </a>
           </div>
           <div class="header__burger-wrapper">
             <div class="header__burger" id="hamb">
@@ -49,9 +53,6 @@
             </div>
           </div>
         </div>
-        <div class="header__bottom">
-
-        </div>
       </div>
     </header>
 
@@ -59,14 +60,23 @@
 
       <section class="main-section">
         <div class="main-section__content _container">
-          <picture>
-            <source media="(max-width: 360px)" srcset="images/img-bg-360.webp">
-            <source media="(min-width: 1920px)" srcset="images/img-background@2x.webp">
-            <img src="images/img-background.webp" alt="image background" loading="lazy">
-          </picture>
-          <div class="counter">
-            <div class="next"></div>
-            <div class="count"></div>
+          <div class="main-section__info">
+            <div class="title">
+              <h1>Здравствуйте, <br>я фрилансер Станислав.</h1>
+            </div>
+            <div class="main-section__text">
+              <p>Верстаю сайты по вашим макетам.</p>
+            </div>
+            <div class="main-section__button">
+              <a href="#">Заказать</a>
+            </div>
+          </div>
+          <div class="main-section__image">
+            <picture>
+              <source media="(max-width: 360px)" srcset="images/img-bg-360.webp">
+              <source media="(min-width: 1920px)" srcset="images/img-background@2x.webp">
+              <img src="images/img-background.webp" alt="image background" loading="lazy">
+            </picture>
           </div>
         </div>
       </section>
