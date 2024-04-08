@@ -333,7 +333,6 @@ const slider = new Swiper('.swiper', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-
   speed: 2000,
 });
 
@@ -342,12 +341,33 @@ new Swiper('.feedback__slider', {
   loop: true,
   spaceBetween: 20,
   slidesPerView: 3,
+  autoHeight: true,
+  a11y: {
+    prevSlideMessage: 'Previous slide',
+    nextSlideMessage: 'Next slide',
+  },
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
 
   speed: 2000,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    },
+    770: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    },
+  }
 });
 //------------------------------------------------------------------------Слайдер
 
