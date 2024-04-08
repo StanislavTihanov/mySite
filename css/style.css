@@ -352,7 +352,43 @@ body.lock {
 
 
 
-
+.feedback {
+  margin-bottom: 80px;
+}
+.feedback__content {
+}
+.feedback__slider {
+  background-color: var(--color-white);
+  padding: 10px;
+  border-radius: 15px;
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.feedback__block {
+  padding: 10px;
+}
+.feedback__block p {
+  font-size: 18px;
+  line-height: 20px;
+}
+.feedback__block-top {
+  margin-bottom: 20px;
+}
+.feedback__block-top-person {
+  margin-bottom: 10px;
+}
+.feedback__block-top-person cite {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  margin-right: 20px;
+}
+.swiper-button-prev {
+}
+.swiper-button-next {
+}
 
 
 /*---------------------------------------footer----------------------------*/
