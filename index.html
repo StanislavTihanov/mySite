@@ -30,7 +30,7 @@
                 <a class="menu__link" data-goto=".projects" href="#">Проекты</a>
               </li>
               <li class="menu__list-item">
-                <a class="menu__link" data-goto=".locations" href="#">Контакты</a>
+                <a class="menu__link" data-goto=".contacts" href="#">Контакты</a>
               </li>
             </ul>
           </nav>
@@ -467,7 +467,7 @@
         </div>
       </section>
 
-      <section class="contacts">
+      <section class="contacts" id="contacts">
         <div class="contacts__content _container">
           <div class="subtitle">
             <h2>Контакты</h2>
@@ -478,9 +478,14 @@
           <div class="contacts__form">
             <form action="sender.php" method="post">
               <input type="text" class="name" name="name" placeholder="Имя" required>
-              <input type="text" class="phone" name="phone" placeholder="Телефон">
+              <input type="text" class="phone" name="phone" placeholder="Телефон" required>
               <textarea name="text" id="" cols="10" rows="0" placeholder="Ссылка на макет в Figma"></textarea>
-              <button type="button" class="send-form">Отправить</button>
+              <label>
+                <button type="button" class="send-form">Отправить</button>
+                <input class="checkbox" type="checkbox" name="coding-notes" required checked>
+                <span class="custom-checkbox"></span>
+                Согласие на обработку <a href="policy.html">персональных данных</a>
+              </label>
               <div class="status"></div>
           </form>
           </div>
@@ -521,6 +526,8 @@
     </footer>
   </div>
   <script src="js/jquery.js"></script> 
+  <script src="js/jquery.maskedinput.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
   <script src="js/swiper.min.js"></script>
   <script src="js/main.js"></script>
 </body>
