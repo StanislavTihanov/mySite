@@ -301,6 +301,17 @@ body.lock {
   font-size: 16px;
   line-height: 20px;
 }
+.technologies__text {
+  color: var(--color-white);
+  line-height: 120%;
+  margin-bottom: 1rem;
+}
+.technologies__text a {
+  color: var(--color-pink);
+}
+.technologies__text p::first-letter {
+  font-size: 2rem;
+}
 /*---------------------------------------technologies----------------------------*/
 
 /*---------------------------------------aboutme----------------------------*/
