@@ -1,3 +1,4 @@
 User-agent: *
-
-Disallow: /
+Disallow: 
+Host: freelancerstanislav.ru
+Sitemap: http://freelancerstanislav.ru/sitemap.xml

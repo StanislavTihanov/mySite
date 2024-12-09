@@ -11,23 +11,6 @@
   <link rel="shortcut icon" href="/images/favicon.icon">
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();
-  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-  ym(96977998, "init", {
-       clickmap:true,
-       trackLinks:true,
-       accurateTrackBounce:true,
-       webvisor:true
-  });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/96977998" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 </head>
 
 <body id="body">
@@ -184,6 +167,7 @@
                   </a>
                 </div>
               </div>
+              
             </div>
           
             <div class="swiper-pagination"></div>
@@ -199,7 +183,7 @@
           </div>
           <div class="aboutme__block aboutme__block-1">
             <h3>Привет, мое имя Станислав.</h3>
-            <p>Уже как два года верстка сайтов и web-программирование стали для меня основным источником дохода и вдохновения. </p>
+            <p>Уже как два года верстка сайтов и web-программирование стали для меня основным источником дохода и вдохновения.</p>
           </div>
 
           <div class="aboutme__body">
@@ -208,7 +192,7 @@
                 <img src="images/target.svg" alt="icon">
               </div>
               <p> Быстро и качественно делаю верстку сайтов любой сложности и адаптирую под все основные устройства: 
-                Desktop,Планшеты, Mobile.</p>
+                Desktop, Планшеты, Mobile.</p>
             </div>
             <div class="aboutme__block aboutme__block-3">
               <div class="aboutme__block-icon">
@@ -287,7 +271,7 @@
             <div class="aboutme__block-icon">
               <img src="images/pie-chart.svg" alt="icon">
             </div>
-            <p>Также в моем арсенале присутсвует  интеграция верстки на WordPress, что позволит вам без знания кода менять нужный контент на сайте.</p>
+            <p>Также в моем арсенале присутствует интеграция верстки на WordPress, что позволит вам без знания кода менять нужный контент на сайте.</p>
           </div>
         </div>
       </section>
@@ -394,7 +378,7 @@
                         <img src="images/star.svg" alt="star">
                       </div>
                     </div>
-                    <p>“Верстка сайта по макету была выполнена в полном объеме(по факту было сделано, даже больше, чем в ТЗ) и в оговоренные сроки. Все правки вносились в кратчайшие сроки. Хочу отдельно отметить профессиональный подход к написанию оптимизированного HTML кода, присутствует разметка для SEO. Адаптивность сделана под все устройства. Работать с исполнителем было комфортно. Рекомендуем специалиста и продолжим сотрудничество!”</p>
+                    <p>“Верстка сайта по макету была выполнена в полном объеме(по факту было сделано, даже больше, чем в ТЗ) и в оговоренные сроки.Все правки вносились в кратчайшие сроки. Хочу отдельно отметить профессиональный подход к написанию оптимизированного HTML кода, присутствует разметка для SEO. Адаптивность сделана под все устройства. Работать с исполнителем было комфортно. Рекомендуем специалиста и продолжим сотрудничество!”</p>
                   </blockquote>
                 </div>
                 <div class="swiper-slide">
@@ -507,17 +491,47 @@
             <p>Заполните небольшую форму и я с вам свяжусь в течении 15 минут</p>
           </div>
           <div class="contacts__form">
-            <form action="sender.php" method="post">
-              <input type="text" class="name" name="name" placeholder="Имя" required>
-              <input type="text" class="phone" name="phone" placeholder="Телефон" required>
-              <textarea name="text" id="text" cols="10" rows="0" placeholder="Ссылка на макет в Figma"></textarea>
-              <label>
-                <button type="button" class="send-form">Отправить</button>
-                <input class="checkbox" type="checkbox" name="coding-notes" required checked>
-                <span class="custom-checkbox"></span>
-                Согласие на обработку <a href="policy.html">персональных данных</a>
-              </label>
-          </form>
+            <form class="form" action="#" id="form">
+               <div class="form__item">
+                <label class="form__label" for="formName">Имя*:</label>
+                <input class="form__input _req" id="formName" type="text" name="name">
+               </div>
+               <div class="form__item">
+                <label class="form__label" for="formEmail">Email*:</label>
+                <input class="form__input _req _email" id="formEmail" type="text" name="email">
+               </div>
+               <div class="form__item">
+                <div class="form__label">Сроки</div>
+                <select class="select" name="deadlines">
+                 <option value="от 1 дня до 3 дней" selected>от 1 дня до 3 дней</option>
+                 <option value="от 5 дней до 10 дней">от 5 дней до 10 дней</option>
+                 <option value="от 10 дней до 30 дней">от 10 дней до 30 дней</option>
+                </select>
+              </div>
+               <div class="form__item">
+                <label class="form__label" for="formMessage">Ссылка на макет Figma</label>
+                <textarea class="form__textarea _req" id="formMessage" name="message"></textarea>
+               </div>
+               <div class="form__item">
+                <div class="form__label">Прикрепить фото макета</div>
+                <div class="file">
+                   <div class="file__item">
+                      <input class="file__input" id="formImage" type="file" name="image" accept=".jpg, .png, .gif">
+                      <div class="file__button">Выбрать</div>
+                   </div>
+                   <div class="file__preview" id="formPreview"></div>
+                </div>
+              </div>
+              <div class="form__item">
+                 <div class="checkbox">
+                    <input class="checkbox__input _req" id="formAgreement" type="checkbox" name="agreement" checked>
+                    <label class="checkbox__label" for="formAgreement">
+                      <span>Согласие на обработку <a href="policy.html">персональных данных</a></span>
+                    </label>
+                 </div>
+              </div>
+              <button class="form__button" type="submit">Отправить</button>
+            </form>
           </div>
           <div class="contacts__text">
             <p>Или вот мой номер</p>
@@ -577,349 +591,9 @@
       </div>
     </footer>
   </div>
-  <script src="js/jquery.js"></script> 
-  <script src="js/jquery.maskedinput.js"></script>
-  <script src="js/jquery.validate.min.js"></script>
   <script src="js/swiper.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
 </html>
 
-<!------------------------------------------------------------------Готовые блоки
-
-------------------------------------------------------------------------preloader
-    <div class="preloader" id="preloader">
-    <div class="preloader__loader">
-      <div class="preloader__loading">
-        <div class="loading">
-          <div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-------------------------------------------------------------------------preloader
-------------------------------------------------------------------------Quiz
-      <section class="quiz">
-        <div class="overlay"></div>
-        <div class="quiz__content _container">
-          <div class="quiz__start">
-            <button class="quiz__start-button pas__test-button">Старт квиза</button>
-          </div>
-          <div class="quiz__body">
-            <div class="quiz__progress">
-              <span class="quiz__progress-inner"></span>
-            </div>
-            <form class="quiz-form" method="post" action="#">
-              <fieldset class="quiz-form__fieldset">
-                <h3 class="quiz-form__title">Выберите вариант</h3>
-                <label for="quiz-form__fieldset-radio1">
-                  <input class="quiz-form__radio" type="radio" id="quiz-form__fieldset-radio1" name="choice-radio" value="Вариант 1">
-                  <span class="custom-radio"></span>
-                  Вариант 1
-                </label>
-                <label for="quiz-form__fieldset-radio2">
-                  <input class="quiz-form__radio" type="radio" id="quiz-form__fieldset-radio2" name="choice-radio" value="Вариант 2">
-                  <span class="custom-radio"></span>
-                  Вариант 2
-                </label>
-                <label for="quiz-form__fieldset-radio3">
-                  <input class="quiz-form__radio" type="radio" id="quiz-form__fieldset-radio3" name="choice-radio" value="Вариант 3">
-                  <span class="custom-radio"></span>
-                  Вариант 3
-                </label>
-                <button class="quiz-form__btn-next">Далее</button>
-              </fieldset>
-              <fieldset class="quiz-form__fieldset">
-                <h3 class="quiz-form__title">Выберите чекбокс</h3>
-                <label for="quiz-form__checkbox1">
-                  <input class="quiz-form__checkbox" type="checkbox" id="quiz-form__checkbox1" name="choice-checkbox" value="Номер 1">
-                  <span class="custom-checkbox"></span>
-                  Номер 1
-                </label>
-                <label for="quiz-form__checkbox2">
-                  <input class="quiz-form__checkbox" type="checkbox" id="quiz-form__checkbox2" name="choice-checkbox" value="Номер 2">
-                  <span class="custom-checkbox"></span>
-                  Номер 2
-                </label>
-                <label for="quiz-form__checkbox3">
-                  <input class="quiz-form__checkbox" type="checkbox" id="quiz-form__checkbox3" name="choice-checkbox" value="Номер 3">
-                  <span class="custom-checkbox"></span>
-                  Номер 3
-                </label>
-                <div class="quiz-form__buttons">
-                  <button class="quiz-form__btn-prev">Назад</button>
-                  <button class="quiz-form__btn-next">Далее</button>
-                </div>
-              </fieldset>
-              <fieldset class="quiz-form__fieldset">
-                <h3 class="quiz-form__title">Выберите чекбокс</h3>
-                <label for="quiz-form__checkbox4">
-                  <input class="quiz-form__checkbox" type="checkbox" id="quiz-form__checkbox4" name="choice-checkbox" value="Номер 4">
-                  <span class="custom-checkbox"></span>
-                  Номер 4
-                </label>
-                <label for="quiz-form__checkbox5">
-                  <input class="quiz-form__checkbox" type="checkbox" id="quiz-form__checkbox5" name="choice-checkbox" value="Номер 5">
-                  <span class="custom-checkbox"></span>
-                  Номер 5
-                </label>
-                <label for="quiz-form__checkbox6">
-                  <input class="quiz-form__checkbox" type="checkbox" id="quiz-form__checkbox6" name="choice-checkbox" value="Номер 6">
-                  <span class="custom-checkbox"></span>
-                  Номер 6
-                </label>
-                <div class="quiz-form__buttons">
-                  <button class="quiz-form__btn-prev">Назад</button>
-                  <button class="quiz-form__btn-next">Далее</button>
-                </div>
-              </fieldset>
-              <fieldset class="quiz-form__fieldset">
-                <h3 class="quiz-form__title">Выберите чекбокс</h3>
-                <label for="quiz-form__checkbox7">
-                  <input class="quiz-form__checkbox" type="checkbox" id="quiz-form__checkbox7" name="choice-checkbox" value="Номер 7">
-                  <span class="custom-checkbox"></span>
-                  Номер 7
-                </label>
-                <label for="quiz-form__checkbox8">
-                  <input class="quiz-form__checkbox" type="checkbox" id="quiz-form__checkbox8" name="choice-checkbox" value="Номер 8">
-                  <span class="custom-checkbox"></span>
-                  Номер 8
-                </label>
-                <label for="quiz-form__checkbox9">
-                  <input class="quiz-form__checkbox" type="checkbox" id="quiz-form__checkbox9" name="choice-checkbox" value="Номер 9">
-                  <span class="custom-checkbox"></span>
-                  Номер 9
-                </label>
-                <div class="quiz-form__buttons">
-                  <button class="quiz-form__btn-prev">Назад</button>
-                  <button class="quiz-form__btn-next">Далее</button>
-                </div>
-              </fieldset>
-              <fieldset class="quiz-form__fieldset">
-                <label class="quiz-form__input">
-                  Ваше имя
-                  <input type="text" id="quiz-name">
-                </label>
-                <label class="quiz-form__input">
-                  Ваш телефон
-                  <input type="text" id="quiz-phone">
-                </label>
-                <label class="quiz-form__input">
-                  Ваш Email
-                  <input type="email" id="quiz-email">
-                </label>
-                <div class="dropdown">
-                  <button class="dropdown__button">Select</button>
-                  <ul class="dropdown__list">
-                    <li class="dropdown__list-item" data-value="travel">Заметки</li>
-                    <li class="dropdown__list-item" data-value="lessons">Конспекты</li>
-                    <li class="dropdown__list-item" data-value="photo">Фотоальбомы</li>
-                    <li class="dropdown__list-item" data-value="sports">Дневник</li>
-                  </ul>
-                  <input type="text" name="select-category" id="quiz-call" class="dropdown__input-hidden">
-                </div>
-                <div class="quiz-form__buttons">
-                  <button class="quiz-form__btn-prev">Назад</button>
-                  <button class="quiz-form__button" type="submit">Отправить</button>
-                </div>
-                <input type="checkbox" id="quiz-policy" checked>
-              </fieldset>
-              <span class="quiz-indicator"></span>
-            </form>
-          </div>
-        </div>
-      </section>
-
------------------------------------------------------------------------------------------------Quiz
-
-----------------------------------------------------------------------------------------------popup
-      <a class="popup-link" href="#popup">Открытие popup</a>
-      <div class="popup" id="popup">
-        <div class="popup__body">
-          <div class="popup__content">
-            <a class="popup__close close-popup" href="#header">X</a>
-            <h2 class="popup__title">Заполните форму</h2>
-            <form class="form" action="sender.php" method="post">
-              <input class="form__input-name" type="text" name="name" placeholder="Имя Фамилия" required>
-              <input class="form__input-phone" type="text" name="phone" placeholder="Телефон" required>
-              <input class="form__input-email" type="email" name="email" placeholder="E-mail" required>
-              <button class="form__input-button send-form popup-link" href="#popup-form" type="button">Отправить</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="popup" id="popup-form">
-        <div class="popup__body">
-          <div class="popup__content">
-            <a class="popup__close close-popup" href="#header">X</a>
-            <div class="popup__form">
-              
-            </div>
-          </div>
-        </div>
-      </div>
-----------------------------------------------------------------------------------------------popup
-
-----------------------------------------------------------------------------------------------slider
-<div class="swiper">
-
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-  </div>
-
-  <div class="swiper-pagination"></div>
-
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <div class="swiper-scrollbar"></div>
-</div>
-----------------------------------------------------------------------------------------------slider
-
----------------------------------------------------------------------------------------------dropdown-select
-        <div class="dropdown">
-          <button class="dropdown__button">Select</button>
-          <ul class="dropdown__list">
-            <li class="dropdown__list-item" data-value="travel">Заметки</li>
-            <li class="dropdown__list-item" data-value="lessons">Конспекты</li>
-            <li class="dropdown__list-item" data-value="photo">Фотоальбомы</li>
-            <li class="dropdown__list-item" data-value="sports">Дневник</li>
-          </ul>
-          <input type="text" name="select-category" value="" class="dropdown__input-hidden">
-        </div>
----------------------------------------------------------------------------------------------dropdown-select
-
-
-
-----------------------------------------------------------------------------------------------checkbox
-        <label>
-          <input class="checkbox" type="checkbox" name="coding-notes">
-          <span class="custom-checkbox"></span>
-          Чекбокс
-        </label>
-----------------------------------------------------------------------------------------------checkbox
-----------------------------------------------------------------------------------------------radio-buttons
-    <div class="radio__buttons">
-      <div class="radio__button">
-        <label>
-          <input class="real-radio" type="radio" name="category" value="button-1">
-          <span class="custom-radio"></span>
-          Кнопка 1
-        </label>
-      </div>
-      <div class="radio__button">
-        <label>
-          <input class="real-radio" type="radio" name="category" value="button-2">
-          <span class="custom-radio"></span>
-          Кнопка 2
-        </label>
-      </div>
-    </div>
-----------------------------------------------------------------------------------------------radio-buttons
-
-
-
-----------------------------------------------------------------------------------------------Accordion
-    <div class="accordion__wrapper">
-      <div class="accordion">
-        <div class="accordion__title" data-tab="tab-1">
-          <h3>Python</h3>
-          <span></span>
-        </div>
-        <div class="accordion__content" id="tab-1">
-          <p>Lorem ipsum dolor, sit amet consectetur</p>
-        </div>
-      </div>
-      <div class="accordion">
-        <div class="accordion__title" data-tab="tab-2">
-          <h3>Python</h3>
-          <span></span>
-        </div>
-        <div class="accordion__content" id="tab-2">
-          <p>Lorem ipsum dolor, sit amet consectetur</p>
-        </div>
-      </div>
-      <div class="accordion">
-        <div class="accordion__title" data-tab="tab-3">
-          <h3>Python</h3>
-          <span></span>
-        </div>
-        <div class="accordion__content" id="tab-3">
-          <p>Lorem ipsum dolor, sit amet consectetur</p>
-        </div>
-      </div>
-    </div>
-----------------------------------------------------------------------------------------------Accordion
-
-
-----------------------------------------------------------------------------------------------Tabs
-      <div class="tabs">
-        <div class="tabs__nav">
-          <button class="tabs-button active-tab" type="button">Кнопка 1</button>
-          <button class="tabs-button" type="button">Кнопка 2</button>
-          <button class="tabs-button" type="button">Кнопка 3</button>
-        </div>
-        <div class="tabs__block">
-          <div class="tabs-content active-tab"">
-            <p>quae officia accusamus rem eum?quae</p>
-          </div>
-          <div class="tabs-content">
-            <p>quae officia accusamus rem eum? <br> quae officia accusamus rem eum?</p>
-          </div>
-          <div class="tabs-content">
-            <p>quae officia accusamus rem eum? <br>quae officia accusamus rem eum? <br>quae officia accusamus rem eum? </p>
-          </div>
-        </div>
-      </div>
-----------------------------------------------------------------------------------------------Tabs
-
-----------------------------------------------------------------------------------------------Слайдер самописный
-const slider = document.querySelector('#slider')
-const sliderItems = Array.from(slider.children);
-const btnNext = document.querySelector('#btnNext')
-const btnPrev = document.querySelector('#btnPrev')
-
-
-sliderItems.forEach(function (slide, index) {
-  if (index !== 0) slide.classList.add('hidden');
-  slide.dataset.index = index;
-  sliderItems[0].setAttribute('data-active', '');
-  slide.addEventListener('click', function() {
-    showNextSlide('next')
-  });
-
-});
-    btnNext.onclick = function () {
-      showNextSlide('next')
-    }
-
-    btnPrev.onclick = function () {
-      showNextSlide('prev')
-    }
-
-function showNextSlide(direction) {
-  const currentSlide = slider.querySelector('[data-active]');
-  const currentSlideIndex = +currentSlide.dataset.index;
-  currentSlide.classList.add('hidden')
-  currentSlide.removeAttribute('data-active');
-
-  let nextSlideIndex;
-
-  if (direction === 'next') {
-    nextSlideIndex = currentSlideIndex + 1 === sliderItems.length ? 0 : currentSlideIndex + 1;
-  } else if (direction === 'prev')  {
-    nextSlideIndex = currentSlideIndex === 0 ? sliderItems.length - 1 : currentSlideIndex - 1;
-  }
-
-  const nextSlide = slider.querySelector(`[data-index="${nextSlideIndex}"]`);
-  nextSlide.classList.remove('hidden')
-  nextSlide.setAttribute('data-active', '')
-
-}
-
-----------------------------------------------------------------------------------------------Слайдер самописный
-
------------------------------------------------------------------------------Готовые блоки---->
