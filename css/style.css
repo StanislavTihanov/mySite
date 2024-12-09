@@ -121,7 +121,7 @@ body.lock {
   --color-white: #FFFFFF;
   --color-black: #000000;
   --color-violet: #4E0362;
-  --color-pink: #FFBAAB;
+  --color-pink: #de91f4;
   --color-red: #C63264;
 }
 /*---------------------------------------header----------------------*/
@@ -301,16 +301,45 @@ body.lock {
   font-size: 16px;
   line-height: 20px;
 }
-.technologies__text {
+.technologies__info {
   color: var(--color-white);
-  line-height: 120%;
+}
+.technologies__subtitle {
+  font-size: clamp( 1rem, 1.7vw, 1.5rem);
   margin-bottom: 1rem;
+  color: var(--color-pink);
+}
+.technologies__text {
+  margin-bottom: 0.5rem;
+  font-size: clamp(0.8rem, 1.7vw, 1rem);
+  line-height: 120%;
 }
 .technologies__text a {
   color: var(--color-pink);
 }
-.technologies__text p::first-letter {
-  font-size: 2rem;
+.technologies__list {
+  margin-bottom: 1rem;
+  list-style-type: none; 
+  counter-reset: my-counter;
+}
+.technologies__list_title {
+  margin-bottom: 0.3rem;
+  font-size: clamp(0.9rem, 1.7vw, 1.2rem);
+}
+.technologies__list li {
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  position: relative;
+}
+.technologies__list li::before {
+  position: absolute;
+  content: counter(my-counter); 
+  counter-increment: my-counter; 
+  background: var(--color-pink);
+  padding: 2px 5px; 
+  border-radius: 50%;
+  margin-left: -2rem;
+  color: var(--color-violet);
 }
 /*---------------------------------------technologies----------------------------*/
 
