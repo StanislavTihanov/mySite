@@ -56,125 +56,137 @@ if (menuLinks.length > 0) {
 
 //------------------------------------------------------------------------Обработка формы
 document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('form');
-  const phoneInput = document.querySelector('._number'); // Поле ввода телефона
+  const forms = document.querySelectorAll('form'); // Получаем все формы на странице
 
-  // Добавляем маску для номера телефона
-  Inputmask("+7 (999) 999-99-99").mask(phoneInput);
+  forms.forEach((form) => {
+    const phoneInput = form.querySelector('._number'); // Поле ввода телефона
 
-  form.addEventListener('submit', formSend);
+    // Добавляем маску для номера телефона
+    if (phoneInput) {
+      Inputmask("+7 (999) 999-99-99").mask(phoneInput);
+    }
 
-  async function formSend(e) {
-    e.preventDefault();
+    form.addEventListener('submit', formSend);
 
-    let error = formValidate(form);
-    let formData = new FormData(form);
-    formData.append('image', formImage.files[0]);
+    async function formSend(e) {
+      e.preventDefault();
 
-    if (error === 0) {
-      form.classList.add('_sending');
-      let response = await fetch('sendmail.php', {
-        method: 'POST',
-        body: formData
+      let error = formValidate(form);
+      let formData = new FormData(form);
+
+      const formImage = form.querySelector('#formImage');
+      if (formImage && formImage.files[0]) {
+        formData.append('image', formImage.files[0]);
+      }
+
+      if (error === 0) {
+        form.classList.add('_sending');
+        let response = await fetch('sendmail.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          let result = await response.json();
+          alert(result.message);
+          const formPreview = form.querySelector('#formPreview');
+          if (formPreview) {
+            formPreview.innerHTML = '';
+          }
+          form.reset();
+          form.classList.remove('_sending');
+        } else {
+          alert('Ошибка');
+          form.classList.remove('_sending');
+        }
+      } else {
+        alert('Заполните обязательные поля');
+      }
+    }
+
+    function formValidate(form) {
+      let error = 0;
+      let formReq = form.querySelectorAll('._req');
+
+      formReq.forEach((input) => {
+        formRemoveError(input);
+
+        if (input.classList.contains('_email')) {
+          if (!emailTest(input)) { // проверка на корректность email
+            formAddError(input);
+            error++;
+          }
+        } else if (input.classList.contains('_number')) {
+          if (!phoneTest(input)) { // проверка на корректность телефона
+            formAddError(input);
+            error++;
+          }
+        } else if (input.getAttribute('type') === "checkbox" && input.checked === false) {
+          formAddError(input);
+          error++;
+        } else {
+          if (input.value === '') {
+            formAddError(input);
+            error++;
+          }
+        }
+      });
+      return error;
+    }
+
+    function formAddError(input) {
+      input.parentElement.classList.add('_error');
+      input.classList.add('_error');
+    }
+
+    function formRemoveError(input) {
+      input.parentElement.classList.remove('_error');
+      input.classList.remove('_error');
+    }
+
+    // проверка email
+    function emailTest(input) {
+      return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(input.value);
+    }
+
+    // проверка телефона
+    function phoneTest(input) {
+      return /^\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/.test(input.value);
+    }
+
+    // Работа с изображением
+    const formImage = form.querySelector('#formImage');
+    const formPreview = form.querySelector('#formPreview');
+
+    if (formImage) {
+      formImage.addEventListener('change', () => {
+        uploadFile(formImage.files[0]);
       });
 
-      if (response.ok) {
-        let result = await response.json();
-        alert(result.message);
-        formPreview.innerHTML = '';
-        form.reset();
-        form.classList.remove('_sending');
-      } else {
-        alert('Ошибка');
-        form.classList.remove('_sending');
-      }
-
-    } else {
-      alert('Заполните обязательные поля');
-    }
-  }
-
-  function formValidate(form) {
-    let error = 0;
-    let formReq = document.querySelectorAll('._req');
-
-    for (let index = 0; index < formReq.length; index++) {
-      const input = formReq[index];
-      formRemoveError(input);
-
-      if (input.classList.contains('_email')) {
-        if (!emailTest(input)) { // проверка на корректность email
-          formAddError(input);
-          error++;
+      function uploadFile(file) {
+        if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+          alert('Только изображения');
+          formImage.value = '';
+          return;
         }
-      } else if (input.classList.contains('_number')) {
-        if (!phoneTest(input)) { // проверка на корректность телефона
-          formAddError(input);
-          error++;
+        if (file.size > 2 * 1024 * 1024) {
+          alert('Файл должен быть менее 2 МБ');
+          return;
         }
-      } else if (input.getAttribute('type') === "checkbox" && input.checked === false) {
-        formAddError(input);
-        error++;
-      } else {
-        if (input.value === '') {
-          formAddError(input);
-          error++;
-        }
+        let reader = new FileReader();
+        reader.onload = function (e) {
+          if (formPreview) {
+            formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
+          }
+        };
+        reader.onerror = function (e) {
+          alert('Ошибка');
+        };
+        reader.readAsDataURL(file);
       }
     }
-    return error;
-  }
-
-  function formAddError(input) {
-    input.parentElement.classList.add('_error');
-    input.classList.add('_error');
-  }
-
-  function formRemoveError(input) {
-    input.parentElement.classList.remove('_error');
-    input.classList.remove('_error');
-  }
-
-  // проверка email
-  function emailTest(input) {
-    return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(input.value);
-  }
-
-  // проверка телефона
-  function phoneTest(input) {
-    return /^\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/.test(input.value);
-  }
-
-  //получаем инпут file в переменную
-  const formImage = document.getElementById('formImage');
-  const formPreview = document.getElementById('formPreview');
-
-  formImage.addEventListener('change', () => {
-    uploadFile(formImage.files[0]);
   });
-
-  function uploadFile(file) {
-    if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-      alert('Только изображения');
-      formImage.value = '';
-      return;
-
-    }
-    if (file.size > 2 * 1024 * 1024) {
-      alert('Файл должен быть менее 2 МБ');
-      return;
-    }
-    let reader = new FileReader();
-    reader.onload = function (e) {
-      formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
-    };
-    reader.onerror = function (e) {
-      alert('Ошибка');
-    };
-    reader.readAsDataURL(file);
-  }
 });
-
 
 //------------------------------------------------------------------------Обработка формы
 
