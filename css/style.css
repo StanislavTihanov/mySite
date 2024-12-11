@@ -559,7 +559,7 @@ body.lock {
 .form__input._error,
 .form__textarea._error,
 .checkbox._error .checkbox__label::before{
-  border: 2px solid red;
+  border: 1px solid red;
 }
 .select {
   background-color: #f1d5f9;

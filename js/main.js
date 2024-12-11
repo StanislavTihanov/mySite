@@ -62,10 +62,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const phoneInput = form.querySelector('._number'); // Поле ввода телефона
 
     // Добавляем маску для номера телефона
-    if (phoneInput) {
-      Inputmask("+7 (999) 999-99-99").mask(phoneInput);
-    }
-
+    const inputElement = document.getElementById('formNumber');
+    const maskOptions = {
+      mask: '+{7} (000) 000-00-00', // пример маски для телефона
+      lazy: false,   // Фиксированные символы видны сразу
+    };
+    const mask = IMask(inputElement, maskOptions);
+    
     form.addEventListener('submit', formSend);
 
     async function formSend(e) {
@@ -88,7 +91,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (response.ok) {
           let result = await response.json();
-          alert(result.message);
+          form.style.display = 'none';
+
+          const successMessage = document.createElement('div');
+          successMessage.classList.add('success-message');
+          successMessage.textContent = 'Форма успешно отправлена!';
+          form.parentElement.appendChild(successMessage);
+
+          setTimeout(() => {
+            form.style.display = 'block';
+            successMessage.style.display = 'none';
+          }, 3000);
+
           const formPreview = form.querySelector('#formPreview');
           if (formPreview) {
             formPreview.innerHTML = '';

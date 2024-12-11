@@ -281,10 +281,11 @@
           <div class="subtitle">
             <h2>Основные технологии</h2>
           </div>
-          <div class="technologies__info">
-            <div class="technologies__subtitle">
+          <article class="technologies__info">
+            <header class="technologies__subtitle">
               <h3>Верстка сайта: ключ к созданию эффективных и быстрых веб-ресурсов</h3>
-            </div>
+            </header>
+            <section>
             <div class="technologies__text">
               <p>
                 Верстка сайта — это процесс преобразования графического макета в функциональный код, включающий создание гипертекстового документа (HTML), который легко воспринимается браузерами и поисковыми роботами.
@@ -355,7 +356,11 @@
                 Итак, верстка — это не просто этап создания сайта, а фундамент, на котором строится успешный веб-ресурс.
               </p>
             </div>
-          </div>
+            </section>
+            <footer>
+              <p>Источник: <a href="https://freelancerstanislav.ru/">freelancerstanislav.ru</a></p>
+            </footer>
+          </article>
           <div class="technologies__row">
             <div class="technologies__logo">
               <img src="images/html-logo.webp" alt="html логотип">
@@ -656,8 +661,8 @@
                 </select>
               </div>
                <div class="form__item">
-                <label class="form__label" for="formMessage">Ссылка на макет Figma</label>
-                <textarea class="form__textarea _req" id="formMessage" name="message"></textarea>
+                <label class="form__label" for="formMessage">Ссылка на макет</label>
+                <textarea class="form__textarea" id="formMessage" name="message"></textarea>
                </div>
                <div class="form__item">
                 <div class="form__label">Прикрепить фото макета</div>
@@ -714,7 +719,7 @@
       </div>
     </footer>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.min.js"></script>
+  <script src="https://unpkg.com/imask"></script>
   <script src="js/swiper.min.js"></script>
   <script src="js/main.js"></script>
 </body>
