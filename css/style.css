@@ -561,6 +561,14 @@ body.lock {
 .checkbox._error .checkbox__label::before{
   border: 1px solid red;
 }
+.form__error {
+  font-size: 0.7rem;
+  color: red;
+  opacity: 0;
+}
+.form__error.view {
+  opacity: 1;
+}
 .select {
   background-color: #f1d5f9;
   color: var(--color-violet);

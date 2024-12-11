@@ -640,50 +640,53 @@
           </div>
           <div class="contacts__form">
             <form class="form" action="#" id="form">
-               <div class="form__item">
-                <label class="form__label" for="formName">Имя*:</label>
-                <input class="form__input _req" id="formName" type="text" name="name">
-               </div>
-               <div class="form__item">
-                <label class="form__label" for="formEmail">Email*:</label>
-                <input class="form__input _req _email" id="formEmail" type="text" name="email">
-               </div>
-               <div class="form__item">
-                <label class="form__label" for="formNumber">Телефон*:</label>
-                <input class="form__input _req _number" id="formNumber" type="text" name="number">
-               </div>
-               <div class="form__item">
-                <div class="form__label">Сроки</div>
-                <select class="select" name="deadlines">
-                 <option value="от 1 дня до 3 дней" selected>от 1 дня до 3 дней</option>
-                 <option value="от 5 дней до 10 дней">от 5 дней до 10 дней</option>
-                 <option value="от 10 дней до 30 дней">от 10 дней до 30 дней</option>
-                </select>
-              </div>
-               <div class="form__item">
-                <label class="form__label" for="formMessage">Ссылка на макет</label>
-                <textarea class="form__textarea" id="formMessage" name="message"></textarea>
-               </div>
-               <div class="form__item">
-                <div class="form__label">Прикрепить фото макета</div>
-                <div class="file">
-                   <div class="file__item">
-                      <input class="file__input" id="formImage" type="file" name="image" accept=".jpg, .png, .gif">
-                      <div class="file__button">Выбрать</div>
-                   </div>
-                   <div class="file__preview" id="formPreview"></div>
-                </div>
+              <div class="form__item">
+               <label class="form__label" for="formName">Имя*</label>
+               <input class="form__input _req" id="formName" type="text" name="name">
+               <span class="form__error">Заполните поле</span>
               </div>
               <div class="form__item">
-                 <div class="checkbox">
-                    <input class="checkbox__input _req" id="formAgreement" type="checkbox" name="agreement" checked>
-                    <label class="checkbox__label" for="formAgreement">
-                      <span>Согласие на обработку <a href="policy.html">персональных данных</a></span>
-                    </label>
-                 </div>
+               <label class="form__label" for="formEmail">Email*</label>
+               <input class="form__input _req _email" id="formEmail" type="text" name="email">
+               <span class="form__error">Заполните поле</span>
               </div>
-              <button class="form__button" type="submit">Отправить</button>
-            </form>
+              <div class="form__item">
+               <label class="form__label" for="formNumber">Телефон*</label>
+               <input class="form__input _req _number" id="formNumber" type="text" name="number">
+               <span class="form__error">Заполните поле</span>
+              </div>
+              <div class="form__item">
+               <div class="form__label">Сроки</div>
+               <select class="select" name="deadlines">
+                <option value="от 1 дня до 3 дней" selected>от 1 дня до 3 дней</option>
+                <option value="от 5 дней до 10 дней">от 5 дней до 10 дней</option>
+                <option value="от 10 дней до 30 дней">от 10 дней до 30 дней</option>
+               </select>
+             </div>
+              <div class="form__item">
+               <label class="form__label" for="formMessage">Ссылка на макет</label>
+               <textarea class="form__textarea" id="formMessage" name="message"></textarea>
+              </div>
+              <div class="form__item">
+               <div class="form__label">Прикрепить фото макета</div>
+               <div class="file">
+                  <div class="file__item">
+                     <input class="file__input" id="formImage" type="file" name="image" accept=".jpg, .png, .gif">
+                     <div class="file__button">Выбрать</div>
+                  </div>
+                  <div class="file__preview" id="formPreview"></div>
+               </div>
+             </div>
+             <div class="form__item">
+                <div class="checkbox">
+                   <input class="checkbox__input _req" id="formAgreement" type="checkbox" name="agreement" checked>
+                   <label class="checkbox__label" for="formAgreement">
+                     <span>Согласие на обработку <a href="policy.html">персональных данных</a></span>
+                   </label>
+                </div>
+             </div>
+             <button class="form__button" type="submit">Отправить</button>
+           </form>
           </div>
           <div class="contacts__text">
             <p>Или вот мой номер</p>

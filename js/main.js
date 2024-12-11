@@ -113,8 +113,6 @@ document.addEventListener('DOMContentLoaded', function () {
           alert('Ошибка');
           form.classList.remove('_sending');
         }
-      } else {
-        alert('Заполните обязательные поля');
       }
     }
 
@@ -151,11 +149,23 @@ document.addEventListener('DOMContentLoaded', function () {
     function formAddError(input) {
       input.parentElement.classList.add('_error');
       input.classList.add('_error');
+    
+      // Ищем элемент с классом form__error внутри контейнера родителя
+      const errorSpan = input.parentElement.querySelector('.form__error');
+      if (errorSpan) {
+        errorSpan.classList.add('view'); // Добавляем класс view
+      }
     }
-
+    
     function formRemoveError(input) {
       input.parentElement.classList.remove('_error');
       input.classList.remove('_error');
+    
+      // Ищем элемент с классом form__error внутри контейнера родителя
+      const errorSpan = input.parentElement.querySelector('.form__error');
+      if (errorSpan) {
+        errorSpan.classList.remove('view'); // Удаляем класс view
+      }
     }
 
     // проверка email
